@@ -8,8 +8,8 @@ This analysis is based on the "Measuring Hate Speech" dataset, represented in th
 
 ### Annotators and Annotations
 
-- **Number of annotators:** {num_annotators}
-- **Total number of annotations:** {num_annotations}
+- **Number of annotators:** 7912
+- **Total number of annotations:** 135556
 
 ### Annotations per Annotator
 
@@ -19,17 +19,17 @@ The histogram above shows the distribution of annotations per annotator.
 
 ### Label Analysis
 
-The dataset contains multiple labels representing different aspects of hate speech. Here are the distinct labels and their counts:
+The dataset contains multiple labels representing different aspects of hate speech. Here are the distinct labels and their possible values:
 
-- **Sentiment:** {distinct_labels['sentiment']}
-- **Respect:** {distinct_labels['respect']}
-- **Insult:** {distinct_labels['insult']}
-- **Humiliate:** {distinct_labels['humiliate']}
-- **Status:** {distinct_labels['status']}
-- **Dehumanize:** {distinct_labels['dehumanize']}
-- **Violence:** {distinct_labels['violence']}
-- **Genocide:** {distinct_labels['genocide']}
-- **Attack/Defend:** {distinct_labels['attack_defend']}
+- **Sentiment:** 1-5
+- **Respect:** 1-5
+- **Insult:** 1-5
+- **Humiliate:** 1-5
+- **Status:** 1-5
+- **Dehumanize:** 1-5
+- **Violence:** 1-5
+- **Genocide:** 1-5
+- **Attack/Defend:** 1-5
 
 These labels are continuous numerical values. Here are the histograms for each label:
 
@@ -45,15 +45,40 @@ These labels are continuous numerical values. Here are the histograms for each l
 
 ### Annotator Demographics
 
-The dataset includes demographic information for annotators. The counts for each category can be found in the `demographic_stats.txt` file. The demographic features available are:
+The dataset includes demographic information for annotators. Below are the counts for each category:
 
-1. Annotator Gender
-2. Annotator Education
-3. Annotator Income
-4. Annotator Ideology
+- **Annotator Gender:**
+  - Female: 76370
+  - Male: 57582
+  - Non-binary: 985
+  - Prefer not to say: 500
+  - Self-describe: 119
 
-This demographic information can be useful for analyzing potential biases in the annotations and understanding the diversity of the annotator pool.
+- **Annotator Education:**
+  - College Grad (BA): 50206
+  - Some College: 35115
+  - College Grad (AA): 18011
+  - High School Grad: 14138
+  - Masters: 12593
+  - Professional Degree: 3042
+  - PhD: 1562
+  - Some High School: 872
 
-## Conclusion
+- **Annotator Income:**
+  - $10k-$50k: 56668
+  - $50k-$100k: 52803
+  - $100k-$200k: 17415
+  - <$10k: 6429
+  - >$200k: 2138
 
-This analysis provides an overview of the "Measuring Hate Speech" dataset, including the number of annotators and annotations, the distribution of annotations per annotator, the types of labels used, and the demographic information available for annotators. These insights can be valuable for further research on hate speech detection and analysis of potential biases in the annotation process.
+- **Annotator Ideology:**
+  - Liberal: 33812
+  - Neutral: 23112
+  - Slightly Liberal: 21333
+  - Extremely Liberal: 17944
+  - Conservative: 15628
+  - Slightly Conservative: 15101
+  - Extremely Conservative: 4544
+  - No Opinion: 4055
+
+Please refer to `analysis_results.txt` for more detailed demographic statistics.

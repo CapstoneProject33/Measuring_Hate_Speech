@@ -43,8 +43,16 @@ for column in label_columns:
 demographic_columns = ['annotator_gender', 'annotator_educ', 'annotator_income', 'annotator_ideology']
 demographic_stats = {col: df[col].value_counts().to_dict() for col in demographic_columns}
 
-# Save demographic stats to a text file
-with open('demographic_stats.txt', 'w') as f:
+# Save analysis results to a text file
+with open('analysis_results.txt', 'w') as f:
+    f.write(f"Number of annotators: {num_annotators}\n")
+    f.write(f"Number of annotations: {num_annotations}\n\n")
+    
+    f.write("Distinct labels per category:\n")
+    for label, count in distinct_labels.items():
+        f.write(f"  {label}: {count}\n")
+    
+    f.write("\nDemographic features:\n")
     for column, stats in demographic_stats.items():
         f.write(f"{column}:\n")
         for category, count in stats.items():
