@@ -15,6 +15,11 @@ num_annotators = df['annotator_id'].nunique()
 # Number of annotations
 num_annotations = len(df)
 
+# Define the order for each demographic variable
+educ_order = ['some_high_school', 'high_school_grad', 'some_college', 'college_grad_aa', 'college_grad_ba', 'professional_degree', 'masters', 'phd']
+income_order = ['<10k', '10k-50k', '50k-100k', '100k-200k', '>200k']
+ideology_order = ['extremely_liberal', 'liberal', 'slightly_liberal', 'neutral', 'slightly_conservative', 'conservative', 'extremely_conservative', 'no_opinion']
+
 # Histogram of annotations per annotator
 annotations_per_annotator = df['annotator_id'].value_counts()
 plt.figure(figsize=(10, 6))
@@ -59,10 +64,24 @@ with open('analysis_results.txt', 'w') as f:
             f.write(f"  {category}: {count}\n")
         f.write("\n")
 
-# Plot demographic features
+# Plot demographic features with the correct order for the specified categories
 for column, stats in demographic_stats.items():
     plt.figure(figsize=(10, 6))
-    plt.bar(stats.keys(), stats.values(), color='skyblue', edgecolor='black')
+    
+    # Sort the bars based on the specific order for each demographic category
+    if column == 'annotator_educ':
+        ordered_stats = {key: stats.get(key, 0) for key in educ_order}
+        plt.bar(ordered_stats.keys(), ordered_stats.values(), color='skyblue', edgecolor='black')
+    elif column == 'annotator_income':
+        ordered_stats = {key: stats.get(key, 0) for key in income_order}
+        plt.bar(ordered_stats.keys(), ordered_stats.values(), color='skyblue', edgecolor='black')
+    elif column == 'annotator_ideology':
+        ordered_stats = {key: stats.get(key, 0) for key in ideology_order}
+        plt.bar(ordered_stats.keys(), ordered_stats.values(), color='skyblue', edgecolor='black')
+    else:
+        # Default order for other demographic variables
+        plt.bar(stats.keys(), stats.values(), color='skyblue', edgecolor='black')
+    
     plt.title(f'Demographic Distribution: {column}')
     plt.xlabel(column)
     plt.ylabel('Count')
