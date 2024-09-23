@@ -2,50 +2,46 @@
 
 ## Dataset Overview
 
-This analysis is based on the "Measuring Hate Speech" dataset, represented in the "smaller_file.csv" file.
+This analysis is based on the "Measuring Hate Speech" dataset, represented in the "data/Measuring Hate Speech.csv" file.
 
 ## Key Statistics
 
 ### Annotators and Annotations
 
-- **Number of annotators:** 1 (based on the histogram, all annotations seem to be from a single annotator)
-- **Total number of annotations:** 100
+- **Number of annotators:** {num_annotators}
+- **Total number of annotations:** {num_annotations}
 
 ### Annotations per Annotator
 
 ![Histogram of Annotations per Annotator](images/annotations_per_annotator.png)
 
-The histogram above shows that each annotator has made exactly one annotation, indicating a uniform distribution.
+The histogram above shows the distribution of annotations per annotator.
 
 ### Label Analysis
 
-The dataset contains multiple categorical labels, each representing different aspects of hate speech:
+The dataset contains multiple labels representing different aspects of hate speech. Here are the distinct labels and their counts:
 
-1. Sentiment
-2. Respect
-3. Insult
-4. Humiliate
-5. Status
-6. Dehumanize
-7. Violence
-8. Genocide
-9. Attack/Defend
+- **Sentiment:** {distinct_labels['sentiment']}
+- **Respect:** {distinct_labels['respect']}
+- **Insult:** {distinct_labels['insult']}
+- **Humiliate:** {distinct_labels['humiliate']}
+- **Status:** {distinct_labels['status']}
+- **Dehumanize:** {distinct_labels['dehumanize']}
+- **Violence:** {distinct_labels['violence']}
+- **Genocide:** {distinct_labels['genocide']}
+- **Attack/Defend:** {distinct_labels['attack_defend']}
 
-These labels appear to be continuous numerical values, typically ranging from 0 to 4. Here are the histograms for some of these labels:
+These labels are continuous numerical values. Here are the histograms for each label:
 
-- **Sentiment:**
-
-  ![Sentiment Histogram](images/sentiment_histogram.png)
-
-- **Respect:**
-
-  ![Respect Histogram](images/respect_histogram.png)
-
-- **Insult:**
-
-  ![Insult Histogram](images/insult_histogram.png)
-
-These histograms provide insights into the distribution of values for each label, helping us understand the prevalence of different levels of hate speech characteristics in the dataset.
+![Sentiment Histogram](images/sentiment_histogram.png)
+![Respect Histogram](images/respect_histogram.png)
+![Insult Histogram](images/insult_histogram.png)
+![Humiliate Histogram](images/humiliate_histogram.png)
+![Status Histogram](images/status_histogram.png)
+![Dehumanize Histogram](images/dehumanize_histogram.png)
+![Violence Histogram](images/violence_histogram.png)
+![Genocide Histogram](images/genocide_histogram.png)
+![Attack/Defend Histogram](images/attack_defend_histogram.png)
 
 ### Annotator Demographics
 

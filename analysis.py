@@ -6,7 +6,7 @@ import os
 if not os.path.exists('images'):
     os.makedirs('images')
 
-# Read the CSV file
+# Load the dataset
 df = pd.read_csv('data/Measuring Hate Speech.csv')
 
 # Number of annotators
@@ -27,6 +27,7 @@ plt.close()
 
 # Distinct labels and their types
 label_columns = ['sentiment', 'respect', 'insult', 'humiliate', 'status', 'dehumanize', 'violence', 'genocide', 'attack_defend']
+distinct_labels = {col: df[col].nunique() for col in label_columns}
 
 # Histogram of label values
 for column in label_columns:
@@ -40,10 +41,7 @@ for column in label_columns:
 
 # Demographic features for annotators
 demographic_columns = ['annotator_gender', 'annotator_educ', 'annotator_income', 'annotator_ideology']
-
-demographic_stats = {}
-for column in demographic_columns:
-    demographic_stats[column] = df[column].value_counts().to_dict()
+demographic_stats = {col: df[col].value_counts().to_dict() for col in demographic_columns}
 
 # Save demographic stats to a text file
 with open('demographic_stats.txt', 'w') as f:
