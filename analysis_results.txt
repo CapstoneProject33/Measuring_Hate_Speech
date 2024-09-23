@@ -14,36 +14,36 @@ Distinct labels per category:
 
 Demographic features:
 annotator_gender:
-  female: 76370
-  male: 57582
-  non-binary: 985
-  prefer_not_to_say: 500
-  self-describe: 119
+  female: 4426
+  male: 3392
+  non-binary: 59
+  prefer_not_to_say: 29
+  self-describe: 6
 
 annotator_educ:
-  college_grad_ba: 50206
-  some_college: 35115
-  college_grad_aa: 18011
-  high_school_grad: 14138
-  masters: 12593
-  professional_degree: 3042
-  phd: 1562
-  some_high_school: 872
+  college_grad_ba: 2913
+  some_college: 2064
+  college_grad_aa: 1041
+  high_school_grad: 850
+  masters: 729
+  professional_degree: 176
+  phd: 89
+  some_high_school: 49
 
 annotator_income:
-  10k-50k: 56668
-  50k-100k: 52803
-  100k-200k: 17415
-  <10k: 6429
-  >200k: 2138
+  10k-50k: 3321
+  50k-100k: 3079
+  100k-200k: 1009
+  <10k: 375
+  >200k: 122
 
 annotator_ideology:
-  liberal: 33812
-  neutral: 23112
-  slightly_liberal: 21333
-  extremely_liberal: 17944
-  conservative: 15628
-  slightly_conservative: 15101
-  extremely_conservative: 4544
-  no_opinion: 4055
+  liberal: 1968
+  neutral: 1367
+  slightly_liberal: 1242
+  extremely_liberal: 1065
+  conservative: 895
+  slightly_conservative: 860
+  extremely_conservative: 264
+  no_opinion: 249
 

@@ -19,17 +19,17 @@ The histogram above shows the distribution of annotations per annotator.
 
 ### Label Analysis
 
-The dataset contains multiple labels representing different aspects of hate speech. Here are the distinct labels and their possible values:
+The dataset contains multiple labels representing different aspects of hate speech. Here are the distinct labels and their counts:
 
-- **Sentiment:** 1-5
-- **Respect:** 1-5
-- **Insult:** 1-5
-- **Humiliate:** 1-5
-- **Status:** 1-5
-- **Dehumanize:** 1-5
-- **Violence:** 1-5
-- **Genocide:** 1-5
-- **Attack/Defend:** 1-5
+- **Sentiment:** 0-4
+- **Respect:** 0-4
+- **Insult:** 0-4
+- **Humiliate:** 0-4
+- **Status:** 0-4
+- **Dehumanize:** 0-4
+- **Violence:** 0-4
+- **Genocide:** 0-4
+- **Attack/Defend:** 0-4
 
 These labels are continuous numerical values. Here are the histograms for each label:
 
@@ -45,40 +45,18 @@ These labels are continuous numerical values. Here are the histograms for each l
 
 ### Annotator Demographics
 
-The dataset includes demographic information for annotators. Below are the counts for each category:
+The dataset includes demographic information for annotators. Below are the distributions:
 
-- **Annotator Gender:**
-  - Female: 76370
-  - Male: 57582
-  - Non-binary: 985
-  - Prefer not to say: 500
-  - Self-describe: 119
+#### Annotator Gender
+![Annotator Gender Distribution](images/annotator_gender_distribution.png)
 
-- **Annotator Education:**
-  - College Grad (BA): 50206
-  - Some College: 35115
-  - College Grad (AA): 18011
-  - High School Grad: 14138
-  - Masters: 12593
-  - Professional Degree: 3042
-  - PhD: 1562
-  - Some High School: 872
+#### Annotator Education
+![Annotator Education Distribution](images/annotator_educ_distribution.png)
 
-- **Annotator Income:**
-  - $10k-$50k: 56668
-  - $50k-$100k: 52803
-  - $100k-$200k: 17415
-  - <$10k: 6429
-  - \>$200k: 2138
+#### Annotator Income
+![Annotator Income Distribution](images/annotator_income_distribution.png)
 
-- **Annotator Ideology:**
-  - Liberal: 33812
-  - Neutral: 23112
-  - Slightly Liberal: 21333
-  - Extremely Liberal: 17944
-  - Conservative: 15628
-  - Slightly Conservative: 15101
-  - Extremely Conservative: 4544
-  - No Opinion: 4055
+#### Annotator Ideology
+![Annotator Ideology Distribution](images/annotator_ideology_distribution.png)
 
 Please refer to `analysis_results.txt` for more detailed demographic statistics.
