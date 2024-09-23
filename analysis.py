@@ -23,10 +23,15 @@ ideology_order = ['extremely_liberal', 'liberal', 'slightly_liberal', 'neutral',
 # Histogram of annotations per annotator
 annotations_per_annotator = df['annotator_id'].value_counts()
 plt.figure(figsize=(10, 6))
-plt.hist(annotations_per_annotator, bins=20, color='skyblue', edgecolor='black')
+counts, bins, patches = plt.hist(annotations_per_annotator, bins=20, color='skyblue', edgecolor='black')
 plt.title('Histogram of Annotations per Annotator')
 plt.xlabel('Number of Annotations')
 plt.ylabel('Frequency')
+
+# Annotate histogram bars
+for count, bin_edge in zip(counts, bins[:-1]):
+    plt.text(bin_edge, count, f'{int(count)}', ha='center', va='bottom')
+
 plt.savefig('images/annotations_per_annotator.png')
 plt.close()
 
@@ -37,10 +42,15 @@ distinct_labels = {col: df[col].nunique() for col in label_columns}
 # Histogram of label values
 for column in label_columns:
     plt.figure(figsize=(10, 6))
-    df[column].plot(kind='hist', bins=[-0.5, 0.5, 1.5, 2.5, 3.5, 4.5], color='lightgreen', edgecolor='black')
+    counts, bins, patches = plt.hist(df[column].dropna(), bins=[-0.5, 0.5, 1.5, 2.5, 3.5, 4.5], color='lightgreen', edgecolor='black')
     plt.title(f'Histogram of {column} Values')
     plt.xlabel(f'{column}')
     plt.ylabel('Frequency')
+
+    # Annotate histogram bars
+    for count, bin_edge in zip(counts, bins[:-1]):
+        plt.text(bin_edge + 0.5, count, f'{int(count)}', ha='center', va='bottom')
+
     plt.savefig(f'images/{column}_histogram.png')
     plt.close()
 
@@ -71,17 +81,21 @@ for column, stats in demographic_stats.items():
     # Sort the bars based on the specific order for each demographic category
     if column == 'annotator_educ':
         ordered_stats = {key: stats.get(key, 0) for key in educ_order}
-        plt.bar(ordered_stats.keys(), ordered_stats.values(), color='skyblue', edgecolor='black')
     elif column == 'annotator_income':
         ordered_stats = {key: stats.get(key, 0) for key in income_order}
-        plt.bar(ordered_stats.keys(), ordered_stats.values(), color='skyblue', edgecolor='black')
     elif column == 'annotator_ideology':
         ordered_stats = {key: stats.get(key, 0) for key in ideology_order}
-        plt.bar(ordered_stats.keys(), ordered_stats.values(), color='skyblue', edgecolor='black')
     else:
         # Default order for other demographic variables
-        plt.bar(stats.keys(), stats.values(), color='skyblue', edgecolor='black')
-    
+        ordered_stats = stats
+
+    bars = plt.bar(ordered_stats.keys(), ordered_stats.values(), color='skyblue', edgecolor='black')
+
+    # Annotate each bar with its value
+    for bar in bars:
+        yval = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width()/2, yval, f'{int(yval)}', ha='center', va='bottom')
+
     plt.title(f'Demographic Distribution: {column}')
     plt.xlabel(column)
     plt.ylabel('Count')
