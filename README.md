@@ -69,7 +69,7 @@ The dataset includes demographic information for annotators. Below are the count
   - $50k-$100k: 52803
   - $100k-$200k: 17415
   - <$10k: 6429
-  - >$200k: 2138
+  - \>$200k: 2138
 
 - **Annotator Ideology:**
   - Liberal: 33812
