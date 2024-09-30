@@ -1,6 +1,10 @@
 # Ignore the virtual environment folder
 venv/
 data/
+cartography/
+cartography_output_14a84d18/
+cartography_output_aa143751/
+cartography_output_b4852cdd/
 
 # Other ignores (optional)
 __pycache__/
