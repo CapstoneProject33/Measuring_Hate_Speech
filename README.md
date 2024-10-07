@@ -60,3 +60,8 @@ The dataset includes demographic information for annotators. Below are the distr
 ![Annotator Ideology Distribution](images/annotator_ideology_distribution.png)
 
 Please refer to `analysis_results.txt` for more detailed demographic statistics.
+
+## Data 
+The full "Measuring Hate Speech.csv" is not included, as it exceeds the github file size limit.
+
+The .tsv files are created like so: "index" is mapped from "comment_id", "sentence1" is mapped from "text", "sentence2" holds the value "Is this hate speech?" for each row, and "label" is 1 if the variable "hate_speech_score" is greater than 0 and 0 otherwise. 
