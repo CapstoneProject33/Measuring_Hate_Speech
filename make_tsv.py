@@ -3,7 +3,7 @@ import os
 from sklearn.model_selection import train_test_split
 
 # Load the CSV dataset
-file_path = 'data/Measuring Hate Speech.csv'  # Update with your actual path
+file_path = 'data/measuring_hate_speech.csv'  # Update with your actual path
 df = pd.read_csv(file_path)
 
 # Map the columns as described

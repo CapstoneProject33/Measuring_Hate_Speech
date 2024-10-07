@@ -7,7 +7,7 @@ if not os.path.exists('images'):
     os.makedirs('images')
 
 # Load the dataset
-df = pd.read_csv('data/Measuring Hate Speech.csv')
+df = pd.read_csv('data/measuring_hate_speech.csv')
 
 # Number of annotators
 num_annotators = df['annotator_id'].nunique()
