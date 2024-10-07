@@ -3,7 +3,7 @@ venv/
 cartography/
 
 # Ignore large dataset
-"data/Measuring Hate Speech.csv"
+data/Measuring\ Hate\ Speech.csv
 
 # Other ignores (optional)
 __pycache__/
