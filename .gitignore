@@ -2,9 +2,9 @@
 venv/
 data/
 cartography/
-cartography_output_14a84d18/
-cartography_output_aa143751/
-cartography_output_b4852cdd/
+
+# Ignore large dataset
+'data/Measuring Hate Speech.csv'
 
 # Other ignores (optional)
 __pycache__/
